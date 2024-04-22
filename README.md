@@ -5,7 +5,8 @@ Run locally an LLM
 ```
 conda create --name backend
 conda install --yes --file backend/requirements.txt
-uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
+conda install pytorch::pytorch torchvision torchaudio -c pytorch
+conda install -c conda-forge mlx-lm
 ```
 
 ## Model convertion
@@ -15,9 +16,13 @@ To make a 4-bit quantized model, run:
 ```
 python model_conversion/convert.py --hf-path <hf_repo> -q
 
-python3 model_conversion/convert.py --hf-path mistralai/Mistral-7B-v0.1 -q --mlx-path models/ --hf-token <your_hf_token>
+python3 model_conversion/convert.py --hf-path mistralai/Mistral-7B-v0.1 -q --mlx-path models/mistral_7B/ --hf-token <your_hf_token>
+python3 model_conversion/convert.py --hf-path meta-llama/Meta-Llama-3-8B-Instruct -q --mlx-path models/llama_3_8B/ --hf-token <your_hf_token>
 ```
 
 
 
 ## Run 
+```
+uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
+```
