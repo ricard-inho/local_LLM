@@ -1,0 +1,7 @@
+uvicorn[standard]
+fastapi
+jinja2
+python-multipart
+mlx>=0.8.0
+transformers
+numpy
