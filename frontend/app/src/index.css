@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.message-list {
+  list-style-type: none;
+  overflow-y: auto;
+  height: calc(100vh - 150px); /* Adjust the height as needed, considering the height of other elements */
+  margin: 0;
+  padding: 0;
+}
+
+.user-message {
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.bot-message {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.chat-app {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Adjust the width as needed */
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.send-message-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.send-message-form input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.send-message-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.send-message-form button:hover {
+  background-color: #45a049;
+}
+
+.clear-button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Hide scrollbar */
+.message-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Optional: Ensure that scrollbar is hidden in Firefox */
+.message-list {
+  scrollbar-width: none;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px; /* Adjust the padding as needed */
+  margin: 0;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

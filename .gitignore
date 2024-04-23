@@ -161,4 +161,5 @@ cython_debug/
 
 .DS_Store
 
-
+models/llama_3_8B/*
+models/mistral_7B/*
